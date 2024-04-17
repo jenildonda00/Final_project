@@ -76,8 +76,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Routes
 app.use('/api/movies', authMiddleware, moviesRoutes); // Use authMiddleware to protect movies routes
-app.use('/DeleteMovie/', authMiddleware, moviesRoutes);
-app.use('/api/auth', authRoutes);
+app.use('/', authRoutes);
 
 // Home route
 app.get('/', (req, res) => {
