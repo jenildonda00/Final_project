@@ -17,8 +17,8 @@ const methodOverride = require('method-override');
 // App configuration
 const app = express();
 const PORT = process.env.PORT || 3000;
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://jenildonda00:Jenil12@cluster0.ovmqhta.mongodb.net/sample_mflix';
-const SESSION_SECRET = process.env.SESSION_SECRET || '3c9c05cf6344cebcc87bd7015802d3250a932d8d3b2fe6a7935767b71616ebed589c34da2325f5c54dcbcaf1560f0fed290f0ab52854d6d1dadef612adc5e573';
+const MONGODB_URI = process.env.MONGODB_URI;
+const SESSION_SECRET = process.env.SESSION_SECRET;
 
 // Connect to MongoDB
 mongoose.connect(MONGODB_URI, {
