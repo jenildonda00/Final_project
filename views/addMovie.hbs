@@ -1,0 +1,95 @@
+<h2>Add a New Movie</h2>
+
+<form class="form-container" action="/api/movies/addMovie" method="POST">
+    <!-- Movie Title -->
+    <div class="form-group">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" required>
+    </div>
+
+    <!-- Plot -->
+    <div class="form-group">
+        <label for="plot">Plot:</label>
+        <textarea id="plot" name="plot" required></textarea>
+    </div>
+
+    <!-- Genres -->
+    <div class="form-group">
+        <label for="genres">Genres:</label>
+        <input type="text" id="genres" name="genres" placeholder="e.g. Action, Drama" required>
+    </div>
+
+    <!-- Runtime -->
+    <div class="form-group">
+        <label for="runtime">Runtime (minutes):</label>
+        <input type="number" id="runtime" name="runtime" required>
+    </div>
+
+    <!-- Cast -->
+    <div class="form-group">
+        <label for="cast">Cast:</label>
+        <input type="text" id="cast" name="cast" placeholder="e.g. Actor1, Actor2" required>
+    </div>
+
+    <!-- Languages -->
+    <div class="form-group">
+        <label for="languages">Languages:</label>
+        <input type="text" id="languages" name="languages" placeholder="e.g. English, French" required>
+    </div>
+
+    <!-- Directors -->
+    <div class="form-group">
+        <label for="directors">Directors:</label>
+        <input type="text" id="directors" name="directors" placeholder="e.g. Director1, Director2" required>
+    </div>
+
+    <!-- Released Date -->
+    <div class="form-group">
+        <label for="released">Released Date:</label>
+        <input type="date" id="released" name="released" required>
+    </div>
+
+    <!-- Rated -->
+    <div class="form-group">
+        <label for="rated">Rated:</label>
+        <input type="text" id="rated" name="rated" placeholder="e.g. PG-13" required>
+    </div>
+
+    <!-- Awards -->
+    <div class="form-group">
+        <label for="awards">Awards:</label>
+        <textarea id="awards" name="awards" placeholder="e.g. 2 Oscars" required></textarea>
+    </div>
+
+    <!-- IMDB Rating -->
+    <div class="form-group">
+        <label for="imdbRating">IMDB Rating:</label>
+        <input type="number" id="imdbRating" name="imdbRating" step="0.1" required>
+    </div>
+
+    <!-- Year -->
+    <div class="form-group">
+        <label for="year">Year:</label>
+        <input type="number" id="year" name="year" required>
+    </div>
+
+    <!-- Countries -->
+    <div class="form-group">
+        <label for="countries">Countries:</label>
+        <input type="text" id="countries" name="countries" placeholder="e.g. USA, UK" required>
+    </div>
+
+    <!-- Tomatoes Ratings -->
+    <div class="form-group">
+        <label for="tomatoesViewerRating">Tomatoes Viewer Rating:</label>
+        <input type="number" id="tomatoesViewerRating" name="tomatoesViewerRating" step="0.1" required>
+    </div>
+
+    <div class="form-group">
+        <label for="tomatoesCriticRating">Tomatoes Critic Rating:</label>
+        <input type="number" id="tomatoesCriticRating" name="tomatoesCriticRating" step="0.1" required>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="btn btn-primary">Add Movie</button>
+</form>

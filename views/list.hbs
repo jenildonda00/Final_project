@@ -1,0 +1,76 @@
+<h2>Movies</h2>
+
+<!-- Pagination controls -->
+<div>
+    {{#if currentPage}}
+        <!-- Previous page button -->
+        {{#if (gt currentPage 1)}}
+            <a href="/api/movies?page={{decrement currentPage 1}}&perPage=10">Previous</a>
+        {{/if}}
+
+        <!-- Next page button -->
+        {{#if (lt currentPage totalPages)}}
+            <a href="/api/movies?page={{increment currentPage 1}}&perPage=10">Next</a>
+        {{/if}}
+    {{/if}}
+    <form action="/api/movies/addMovie" > <!-- Add Movie button form -->
+        <button class="my-button" type="submit" name="addmovies">Add Movie</button>
+    </form>
+</div>
+
+<!-- Movie table -->
+<table border="1">
+    <thead>
+        <tr>
+            <th>Poster</th>
+            <th>Title</th>
+            <th>Plot</th>
+            <th>Genres</th>
+            <th>Runtime</th>
+            <th>Cast</th>
+            <th>Languages</th>
+            <th>Directors</th>
+            <th>Released</th>
+            <th>Rated</th>
+            <th>Awards</th>
+            <th>IMDB Rating</th>
+            <th>Year</th>
+            <th>Countries</th>
+            <th>Tomatoes Ratings</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each movies}}
+            <tr>
+                <td>
+                    <a href="/api/movies/{{_id}}">
+                        <img src="{{this.poster}}" alt="{{this.title}}" width="100">
+                    </a>
+                </td>
+                <td><a href="/api/movies/{{_id}}">{{this.title}}</a></td>
+                <td>{{this.plot}}</td>
+                <td>{{#join this.genres ", "}}{{/join}}</td>
+                <td>{{this.runtime}} minutes</td>
+                <td>{{#join this.cast ", "}}{{/join}}</td>
+                <td>{{#join this.languages ", "}}{{/join}}</td>
+                <td>{{#join this.directors ", "}}{{/join}}</td>
+                <td>{{this.released}}</td>
+                <td>{{this.rated}}</td>
+                <td>{{this.awards.text}}</td>
+                <td>{{this.imdb.rating}}</td>
+                <td>{{this.year}}</td>
+                <td>{{#join this.countries ", "}}{{/join}}</td>
+                <td>Viewer - {{this.tomatoes.viewer.rating}}, Critic - {{this.tomatoes.critic.rating}}</td>
+                <td>
+                   <form action="/api/movies/DeleteMovie/" method="POST"> <!-- Delete Movie button form -->
+                    <button class="my-button" type="submit" name="id" value="{{_id}}">Delete Movie</button>
+                </form>
+                <form action="/api/movies/UpdateMovie/{{_id}}" method="GET">
+                    <button class="my-button" type="submit" name="id" value="">Update Movie</button>
+                </form>
+                </td>
+            </tr>
+        {{/each}}
+    </tbody>
+</table>
